@@ -1,5 +1,6 @@
 form {
     border: 3px solid #f1f1f1;
+	width:20%;
 }
 
 input[type=text], input[type=password] {
@@ -29,7 +30,7 @@ button {
 
 .imgcontainer {
 
-	width: 40%;
+	width: 100%;
     text-align: center;
     margin: 24px 0 12px 0;
 }
