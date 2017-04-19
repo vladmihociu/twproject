@@ -51,5 +51,12 @@
 
 
 		}
+	else
+	{
+		
+		echo "<script>alert('Parola este gresita');window.location.href='/index.php';</script>";
+		/*header("Location: /index.php");*/
+
+	}
 	
 ?>
