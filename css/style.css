@@ -20,7 +20,7 @@ a {
 body {
 	margin:0;
 	padding:0;
-	width:1300px;
+	width:70%;
 	margin: 0 auto;
 	color:#fff;
 	background-color:#D3D0D0
@@ -29,9 +29,10 @@ body {
 	text-align:center;
 	font-size: 100px;
 	color: gold;
-	margin-top: 50px;
-	width: 1200px;
-	height: 110px;
+	margin-top: 30px;
+	margin-bottom : 10px;
+	width:90%;
+	height: auto;
 	margin-left: 50PX;
 	background-color: #565252;
 	font-family: "Broadway";
@@ -39,12 +40,10 @@ body {
 }
 .header2{
 	text-align:center;
-	font-size: 70px;
+	font-size: auto;
 	color: gold;
-	margin-top: 50px;
-	margin-left: 350px;
-	width: 600px;
-	height: 80px;
+	width: 50%;
+	height: auto;
 	background-color: #3d3d29;
 	font-family: "Broadway";
 	font-style: oblique;
@@ -56,11 +55,12 @@ ul {
     padding: 0;
     background-color:#565252;
     height:54px;
-    width: 1200px;
+    width: 90%;
     text-align: center;
     margin:0 ;
     margin-top: 5px;
     margin-left: 50px;
+	margin-bottom:10px;
 }
 .li-customize {
     float: left;
@@ -72,7 +72,6 @@ ul {
     text-align: center;
     padding: 15px 16px;
 	font-size:20px;
-	
 	font-family:"proxima nova";
 	transition: .4s all ease-in-out;
 
@@ -88,20 +87,32 @@ transition: .4s all ease-in-out;
 	background-color:#821717;
 }
 .continut{
-	width: 1200px;
+	width: 70%;
 	min-height: 600px;
 	background-color: #b8b894;
 	margin-left: 50px;
-	margin-top:5px;
+	margin-top: 5px;
+	float : left;
+}
+.rightside{
+width:15%;
+float:right;
+background-color:#565252;
+min-height: 600px;
+margin-right: 90px;
+margin-top:5px;
+margin-bottom : 5px;
 }
 .footer{
-	width: 1200px;
+	width: 90%;
 	height: 30px;
 	margin-left: 50px;
 	background-color:#565252;
-	margin-top: 5px;
-	margin-bottom: 50px;
+
 	font-family:Candara;
+	clear : both;
+	margin-top: 5px;
+	margin-bottom: 55px;
 }
 .register{
 	width: 600px;
