@@ -39,14 +39,10 @@ body {
 	font-style: oblique;
 }
 .header2{
-	text-align:center;
-	font-size: auto;
-	color: gold;
-	width: 50%;
+
+	width: 90%;
+	margin-left : 4%;
 	height: auto;
-	background-color: #3d3d29;
-	font-family: "Broadway";
-	font-style: oblique;
 }
 
 
@@ -61,6 +57,7 @@ ul {
     margin-top: 5px;
 	margin-left: 4%;
 	margin-bottom:10px;
+	
 }
 .li-customize {
     float: left;
@@ -89,13 +86,16 @@ transition: .4s all ease-in-out;
 .continut{
 	width: 70%;
 	min-height: 600px;
-	background-color: #b8b894;
+	background-color: #211f1f;
 	margin-left: 4%;
 	margin-top: 5px;
+	margin-bottom:15px;
+	border-style: inset;
+	border-radius: 50px;
+	border-width: 5px;
 	float : left;
 }
 .rightside{
-text-align : center;
 width:17%;
 float:right;
 background-color:#565252;
@@ -103,6 +103,7 @@ min-height: 600px;
 margin-right: 6%;
 margin-top:5px;
 margin-bottom : 5px;
+border-radius: 10px;
 }
 .footer{
 	width: 90%;
@@ -110,11 +111,14 @@ margin-bottom : 5px;
 	margin-left: 4%;
 	margin-right: 4%;
 	background-color:#565252;
-
 	font-family:Candara;
 	clear : both;
 	margin-top: 5px;
 	margin-bottom: 55px;
+}
+
+.paddingg {
+    padding-left: 10px;
 }
 .register{
 	width: 600px;
@@ -180,3 +184,52 @@ margin-bottom : 5px;
   
 .msgln { margin:0 0 2px 0; }
 
+/* Style for login page*/
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
