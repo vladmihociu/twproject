@@ -1,61 +1,162 @@
-form {
-    border: 3px solid #f1f1f1;
-	width:20%;
+/* CSS Document */
+body2 {
+    font:12px arial;
+    color: #222;
+    text-align:center;
+    padding:35px; }
+  
+form, p, span {
+    margin:0;
+    padding:0; }
+  
+input { font:12px arial; }
+  
+a {
+    color:#0000FF;
+    text-decoration:none; }
+  
+    a:hover { text-decoration:underline; }
+  
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; }
+  
+#loginform { padding-top:18px; }
+  
+    #loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#ffff66;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+	
+#chatbox2  {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#ffff66;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+  
+#usermsg {
+    width:395px;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
+
+
+body {
+	margin:0;
+	padding:0;
+	width:1300px;
+	margin: 0 auto;
+	color:#fff;
+	background-color:#D3D0D0
+}
+.header{
+	text-align:center;
+	font-size: 100px;
+	color: gold;
+	margin-top: 50px;
+	width: 1200px;
+	height: 110px;
+	margin-left: 50PX;
+	background-color: #3d3d29;
+	font-family: "Broadway";
+	font-style: oblique;
+}
+.header2{
+	text-align:center;
+	font-size: 70px;
+	color: gold;
+	margin-top: 50px;
+	margin-left: 350px;
+	width: 600px;
+	height: 80px;
+	background-color: #3d3d29;
+	font-family: "Broadway";
+	font-style: oblique;
 }
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-
-	width: 105%;
+ul {
+    list-style-type: none;
+    padding: 0;
+    background-color:#5c5c3d;
+    height:54px;
+    width: 1200px;
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin:0 ;
+    margin-top: 5px;
+    margin-left: 50px;
 }
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
+li {
+    float: left;
 }
-
-.container {
-    padding: 16px;
+li a {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	font-size:20px;
+	font-family:Candara;
 }
-
-span.psw {
-    float: right;
-    padding-top: 16px;
+li a:hover {
+    background-color: #821717;
 }
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+.active{
+	background-color:#821717;
+}
+.continut{
+	width: 1200px;
+	min-height: 600px;
+	background-color: #b8b894;
+	margin-left: 50px;
+	margin-top:5px;
+}
+.footer{
+	width: 1200px;
+	height: 30px;
+	margin-left: 50px;
+	background-color:#5c5c3d;
+	margin-top: 5px;
+	margin-bottom: 50px;
+	font-family:Candara;
+}
+.register{
+	width: 600px;
+	height:500px;
+	background-color: #b8b894;
+	margin-left: 350px;
+	margin-top: 5px;
+	text-align: center;
+	color: black;
+}
+.formular{
+	margin-top: 50px;
+	margin-left: 50px;
 }

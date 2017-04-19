@@ -46,7 +46,9 @@
 			setcookie($cookie_username, $cookie_username_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 			setcookie($cookie_pass, $cookie_pass_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 			}
-			header("Location: /php/chat.php");
+			//header("Location: /php/chat.php");
+			header("Location: /home.html");
+
 
 		}
 	

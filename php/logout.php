@@ -29,12 +29,13 @@ function logout()
 	}
 	if(logout())
 	{
-		unset($_COOKIE['username']);
-		unset($_COOKIE['password']);
+		//unset($_COOKIE['username']);
+		//unset($_COOKIE['password']);
 
-		setcookie('username', null, -1, '/');
-		setcookie('password', null, -1, '/');
-
+		//setcookie('username', null, -1, '/');
+		//setcookie('password', null, -1, '/');
+		setcookie($cookie_username, $cookie_username_value, time() + (-86400), "/"); // 86400 = 1 day
+		setcookie($cookie_pass, $cookie_pass_value, time() + (-86400), "/"); // 86400 = 1 day			
 
 		header("Location: /index.php");
 	}

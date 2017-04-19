@@ -2,7 +2,8 @@
 
 if(isset($_COOKIE['username'])) {
 
-	header("Location: /php/chat.php");
+	//header("Location: /php/chat.php");
+	header("Location: /home.html");
 }
 
 ?>
