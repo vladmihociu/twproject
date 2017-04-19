@@ -16,7 +16,108 @@ a {
     text-decoration:none; }
   
     a:hover { text-decoration:underline; }
-  
+ 
+body {
+	margin:0;
+	padding:0;
+	width:1300px;
+	margin: 0 auto;
+	color:#fff;
+	background-color:#D3D0D0
+}
+.header{
+	text-align:center;
+	font-size: 100px;
+	color: gold;
+	margin-top: 50px;
+	width: 1200px;
+	height: 110px;
+	margin-left: 50PX;
+	background-color: #565252;
+	font-family: "Broadway";
+	font-style: oblique;
+}
+.header2{
+	text-align:center;
+	font-size: 70px;
+	color: gold;
+	margin-top: 50px;
+	margin-left: 350px;
+	width: 600px;
+	height: 80px;
+	background-color: #3d3d29;
+	font-family: "Broadway";
+	font-style: oblique;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    background-color:#565252;
+    height:54px;
+    width: 1200px;
+    text-align: center;
+    margin:0 ;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+li {
+    float: left;
+}
+li a {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+	font-size:20px;
+	
+	font-family:"proxima nova";
+	transition: .4s all ease-in-out;
+
+}
+li a:hover {
+text-decoration:none;
+background : #7f0b0b;
+color : white;
+transition: .4s all ease-in-out;	
+}
+
+.active{
+	background-color:#821717;
+}
+.continut{
+	width: 1200px;
+	min-height: 600px;
+	background-color: #b8b894;
+	margin-left: 50px;
+	margin-top:5px;
+}
+.footer{
+	width: 1200px;
+	height: 30px;
+	margin-left: 50px;
+	background-color:#565252;
+	margin-top: 5px;
+	margin-bottom: 50px;
+	font-family:Candara;
+}
+.register{
+	width: 600px;
+	height:500px;
+	background-color: #b8b894;
+	margin-left: 350px;
+	margin-top: 5px;
+	text-align: center;
+	color: black;
+}
+.formular{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+
 #wrapper, #loginform {
     margin:0 auto;
     padding-bottom:25px;
@@ -66,97 +167,3 @@ a {
   
 .msgln { margin:0 0 2px 0; }
 
-
-body {
-	margin:0;
-	padding:0;
-	width:1300px;
-	margin: 0 auto;
-	color:#fff;
-	background-color:#D3D0D0
-}
-.header{
-	text-align:center;
-	font-size: 100px;
-	color: gold;
-	margin-top: 50px;
-	width: 1200px;
-	height: 110px;
-	margin-left: 50PX;
-	background-color: #3d3d29;
-	font-family: "Broadway";
-	font-style: oblique;
-}
-.header2{
-	text-align:center;
-	font-size: 70px;
-	color: gold;
-	margin-top: 50px;
-	margin-left: 350px;
-	width: 600px;
-	height: 80px;
-	background-color: #3d3d29;
-	font-family: "Broadway";
-	font-style: oblique;
-}
-
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    background-color:#5c5c3d;
-    height:54px;
-    width: 1200px;
-    text-align: center;
-    margin:0 ;
-    margin-top: 5px;
-    margin-left: 50px;
-}
-li {
-    float: left;
-}
-li a {
-    display: inline-block;
-    border-right: 1px solid #bbb;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-	font-size:20px;
-	font-family:Candara;
-}
-li a:hover {
-    background-color: #821717;
-}
-.active{
-	background-color:#821717;
-}
-.continut{
-	width: 1200px;
-	min-height: 600px;
-	background-color: #b8b894;
-	margin-left: 50px;
-	margin-top:5px;
-}
-.footer{
-	width: 1200px;
-	height: 30px;
-	margin-left: 50px;
-	background-color:#5c5c3d;
-	margin-top: 5px;
-	margin-bottom: 50px;
-	font-family:Candara;
-}
-.register{
-	width: 600px;
-	height:500px;
-	background-color: #b8b894;
-	margin-left: 350px;
-	margin-top: 5px;
-	text-align: center;
-	color: black;
-}
-.formular{
-	margin-top: 50px;
-	margin-left: 50px;
-}
