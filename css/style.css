@@ -33,7 +33,7 @@ body {
 	margin-bottom : 10px;
 	width:90%;
 	height: auto;
-	margin-left: 50PX;
+	margin-left: 4%;
 	background-color: #565252;
 	font-family: "Broadway";
 	font-style: oblique;
@@ -59,7 +59,7 @@ ul {
     text-align: center;
     margin:0 ;
     margin-top: 5px;
-    margin-left: 50px;
+	margin-left: 4%;
 	margin-bottom:10px;
 }
 .li-customize {
@@ -90,23 +90,25 @@ transition: .4s all ease-in-out;
 	width: 70%;
 	min-height: 600px;
 	background-color: #b8b894;
-	margin-left: 50px;
+	margin-left: 4%;
 	margin-top: 5px;
 	float : left;
 }
 .rightside{
-width:15%;
+text-align : center;
+width:17%;
 float:right;
 background-color:#565252;
 min-height: 600px;
-margin-right: 90px;
+margin-right: 6%;
 margin-top:5px;
 margin-bottom : 5px;
 }
 .footer{
 	width: 90%;
 	height: 30px;
-	margin-left: 50px;
+	margin-left: 4%;
+	margin-right: 4%;
 	background-color:#565252;
 
 	font-family:Candara;
