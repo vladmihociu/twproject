@@ -34,7 +34,7 @@ function logout()
 		echo "bram";
 		setcookie('password', $_SESSION["password"], time() + (-86400), "/"); // 86400 = 1 day			
 
-		header("Location: /index.php");
+		header("Location: ../index.php");
 		
 	}
 	

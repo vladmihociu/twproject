@@ -47,8 +47,8 @@
 			setcookie($cookie_pass, $cookie_pass_value, time() + (86400), "/"); // 86400 = 1 day
 			}
 			
-			//header("Location: /php/chat.php");
-			header("Location: /home.html");
+			//header("Location: ../php/chat.php");
+			header("Location: ../pagini_html/home.html");
 
 
 		}
