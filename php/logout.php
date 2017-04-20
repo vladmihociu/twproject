@@ -27,16 +27,15 @@ function logout()
 		return 0;
 
 	}
+	
 	if(logout())
 	{
-		//unset($_COOKIE['username']);
-		//unset($_COOKIE['password']);
-
-		//setcookie('username', null, -1, '/');
-		//setcookie('password', null, -1, '/');
-		setcookie($cookie_username, $cookie_username_value, time() + (-86400), "/"); // 86400 = 1 day
-		setcookie($cookie_pass, $cookie_pass_value, time() + (-86400), "/"); // 86400 = 1 day			
+		setcookie('username', $_SESSION["username"], time() + (-86400), "/"); // 86400 = 1 day
+		echo "bram";
+		setcookie('password', $_SESSION["password"], time() + (-86400), "/"); // 86400 = 1 day			
 
 		header("Location: /index.php");
+		
 	}
+	
 ?>
