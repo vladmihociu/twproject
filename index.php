@@ -17,10 +17,9 @@ if(isset($_COOKIE['username'])) {
 <title>Login Page</title>
 </head>
 <body>
-<h2 style = "text-align : center" >Login Page</h2>
 <form action="php/login.php" method='POST'>
   <div class="imgcontainer">
-    <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="photos/Login.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
