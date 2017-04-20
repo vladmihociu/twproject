@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<img class="header2" src='../photos/banner1.png'>
+	<ul>
+		<li class = "li-customize"><a class="active" href="home.html">Home</a></li>
+		<li class = "li-customize"><a href="start.html">Start playing</a></li>
+		<li class = "li-customize"><a href="top.html">Top players</a></li>
+		<li class = "li-customize"><a href="profile.html">Profile</a></li>
+		
+		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="../php/logout.php">Log out</a></li>
+		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="contact.html">Contact</a></li>
+	</ul>
+	
+	
+	<div class="continut">
+	
+	<br>
+	
+	<h3 class = "paddingg" style = "color:gold; text-align:center;" > Bine ati venit la jocul Guess the VIP. <br><br>Regulile sunt simple: <br><br> </h3>
+	<p class='paddingg' style = "color:silver; text-align:center;"> 
+	-La fiecare nivel va trebui sa ghiciti numele persoane/obiectivului din imagine.<br>	
+	-Daca reusiti, veti trece la urmatorul nivel, veti obtine un punct si un banut.<br>
+	-Cu ajutorul punctelor veti creste in clasamentul jocului.<br>
+	-Cu ajutorul banutilot puteti folosi variante ajutatoare:<br>
+	-Afla o litera a numelui(cost:1 banut);<br>
+	-Alege dintre 2 variante de raspuns(cost:5 banuti);<br>
+	-Afla raspunsul corect(cost:10 banuti);<br>
+	-Aveti la dispozitie 3 vieti .<br>
+	-La fiecare 5 nivele trecute consecutiv mai primiti o viata.<br>
+	-Daca ramaneti fara vieti jocul se termina si ramaneti cu punctele si banutii adunati pe parcurs.<br>
+	</p>
+	
+	</div>
+	
+	
+	<div class="rightside">
+	<h3 class='paddingg' style = "color : gold;">Online Players:</h3>
+
+		<li class='paddingg' >VLAD </li>
+		<li class='paddingg' >ANDREI </li>
+		<li class='paddingg' >ADMIN </li>
+			<br> </br>
+	<br> </br>
+	<h3 class='paddingg' style = "color : gold;">Profile info: </h3>
+	<p class='paddingg' > Total games played: </p>
+	<p class='paddingg' > Total used coins: </p>
+	<p class='paddingg' > Total unused coins: </p>
+	<p class='paddingg' > Personal record: </p>
+	<p class='paddingg' > Global rank: </p>
+	<p> </p>
+	</div>
+	
+	
+	<div class="footer">
+		<a id="time" style="float:right;margin-right: 10px;margin-top: 3px; text-decoration:none; color:silver"> 
+			<script language="javascript"> 
+			
+				var time = document.getElementById('time');
+				function writeDate () {
+					var today = new Date();
+					time.innerHTML = today.getHours() +":" + today.getMinutes() + ":" + today.getSeconds();
+					time.innerHTML += " " + today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
+				}
+
+				setInterval(writeDate, 100);
+				
+			</script>
+		</a>
+	</div>
+	
+	
+	
+
+</body>
+</html>
