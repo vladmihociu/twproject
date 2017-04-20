@@ -3,7 +3,7 @@
 if(isset($_COOKIE['username'])) {
 
 	//header("Location: /php/chat.php");
-	header("Location: /home.html");
+	header("Location: /pagini_html/home.html");
 }
 $current_date = date('Y-m-d H:i:s');
 
@@ -14,14 +14,14 @@ $current_date = date('Y-m-d H:i:s');
 <html>
 <head>
 <meta charset="UTF-8">
-<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Page</title>
 </head>
 <body class="body_login">
-<form action="php/login.php" method='POST'>
+<form action="/php/login.php" method='POST'>
   <div class="imgcontainer">
-    <img src="photos/Login.png" alt="Avatar" class="avatar">
+    <img src="/photos/Login.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container" style = "width:40%;margin:0 auto;">
