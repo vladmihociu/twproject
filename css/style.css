@@ -13,7 +13,7 @@ a {
   
     a:hover { text-decoration:underline; }
  
-body {
+.body_website {
 	margin:0;
 	padding:0;
 	width:70%;
@@ -79,6 +79,7 @@ transition: .4s all ease-in-out;
 .active{
 	background-color:#821717;
 }
+/*Design continut*/
 .continut{
 	width: 70%;
 	min-height: 600px;
@@ -91,6 +92,58 @@ transition: .4s all ease-in-out;
 	border-width: 5px;
 	float : left;
 }
+
+.picture{
+	width: 50%;
+	margin-left : 4%;
+	height: auto;
+	border-radius:20px;
+	
+}
+
+input[type=raspuns]{
+    width: 30%;
+	height:auto;
+    padding: 4px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+	display: block;
+	margin: 0 auto;
+}
+
+.coin{
+position: absolute; 
+top: 0px; 
+right: 40px; 
+max-width: 6vw;
+min-width: 60px;
+
+}
+
+
+
+input[type=raspuns2]{
+width:10vw;
+display:inline-block; 
+margin: 0 auto;
+ }
+ 
+
+.button-submit-answer{
+ /* whatevers */
+background: lightblue;
+border: 1px solid black;
+border-left: 0;
+border-radius: 0 10px 10px 0;
+cursor: pointer;
+
+}
+
+.user-input{
+position:absolute;
+transform: translate(15vw,0px); 
+}
+
 .rightside{
 width:17%;
 float:right;
@@ -184,8 +237,9 @@ border-radius: 10px;
 /* Style for login page*/
 
 .body_login {
+	
    	background-color:#D3D0D0;
-	width:60%;
+	width:100%;
 	}
 
 input[type=text], input[type=password] {
@@ -197,7 +251,9 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-button {
+
+
+.button-blue {
     background-color: #045f9f;
     color: gold;
     padding: 14px 20px;
@@ -207,7 +263,8 @@ button {
     width: 100%;
 }
 
-button:hover {
+
+.button-blue:hover {
     opacity: 0.8;
 }
 
@@ -223,7 +280,7 @@ button:hover {
 }
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
 }
 
