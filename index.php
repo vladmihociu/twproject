@@ -31,8 +31,8 @@ $current_date = date('Y-m-d H:i:s');
     <label><b>PASSWORD:</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
     <br>
-    <button type="submit">Login</button>
-	<a href = "/pagini_html/signup.html" > <button type="button">Sign Up</button> </a>
+    <button class="button-blue" type="submit">Login</button>
+	<a href = "/pagini_html/signup.html" > <button class="button-blue" type="button">Sign Up</button> </a>
 	</form>
 	<input type="checkbox" name="remember" value="save-login">Remember me</input>
   </div>
