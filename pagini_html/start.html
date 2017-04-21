@@ -4,9 +4,6 @@
 	<title>Start playnig</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<meta charset="UTF-8">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
 </head>
 <body class="body_website">
 	<img class="header2" src='../photos/banner1.png' alt="Guess the VIP">
@@ -24,14 +21,14 @@
 	<div class="continut" style="position: relative;">
 	<br><br><br>
 
-	<img class="coin" src="/photos/coin.png">
+	<img class="coin" src="/photos/coin.png" alt="">
 	
 	<img class="picture" style = "display: block; margin: 0 auto;" src="https://c1.staticflickr.com/3/2849/13872057843_d110751dc7_z.jpg" width="440" height="257" alt="">
 	
 	<br><br>
 	
 	<div class="user-input" >
-	<input type="raspuns2" placeholder="Your answer" name="username" required>
+	<input type="text" placeholder="Your answer" name="raspuns2" style="width:30%;" required/>
 	<button class="button-submit-answer" type="button">Submit answer</button>
 	</div>
 	
@@ -40,14 +37,10 @@
 	
 	<div class="rightside">
 	<h3 class='paddingg' style = "color : gold;">Online Players:</h3>
-	<ul>
-		<li class='paddingg' >VLAD </li>
-		<li class='paddingg' >ANDREI </li>
-		<li class='paddingg' >ADMIN </li>
-	</ul>
-			<br> <br>
-	<br> <br>
-	<h3 class='paddingg' style = "color : gold;">Profile info: </h3>
+		<p class='paddingg' >VLAD </p>
+		<p class='paddingg' >ANDREI </p>
+		<p class='paddingg' >ADMIN </p>
+	<div class="profileinfo"><h3 class='paddingg' style = "color : gold;">Profile info: </h3>
 	<p class='paddingg' > Total games played: </p>
 	<p class='paddingg' > Total used coins: </p>
 	<p class='paddingg' > Total unused coins: </p>
@@ -55,11 +48,12 @@
 	<p class='paddingg' > Global rank: </p>
 	<p> </p>
 	</div>
+	</div>
 	
-		
+	
 	<div class="footer">
-		<a id="time" style="float:right;margin-right: 10px;margin-top: 3px; text-decoration:none; color:silver"> 
-			<script> 
+		<a class="time" id="time" style="float:right;margin-right: 10px;margin-top: 3px; text-decoration:none; color:silver"> 
+			<script > 
 			
 				var time = document.getElementById('time');
 				function writeDate () {
