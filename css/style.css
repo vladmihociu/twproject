@@ -243,7 +243,12 @@ border-radius: 10px;
     background-position: center center;
 	background-attachment: fixed;
 	}
-
+.body_singup {
+	background-image: url("/photos/login-wallpaper.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-attachment: fixed;
+}
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -294,6 +299,10 @@ img.avatar {
 span.psw {
     float: right;
     padding-top: 16px;
+}
+.singup{
+	width:40%;
+	margin:0 auto;
 }
 @media only screen and (max-width: 600px) 
 {
@@ -364,7 +373,20 @@ span.psw {
 	margin: 0 auto;
 	color:#fff;
 	background-color:#D3D0D0
-}
+	}
+	.singup{
+	margin:0;
+	width:140%;
+	margin-left:-20%;
+	}
+	.body_singup {
+	width:35%;
+	background-image: url("/photos/login-wallpaper.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-attachment: fixed;
+	}
+	}
 }
 @media only screen and (min-width:601px) and (max-width:1000px){
 	
