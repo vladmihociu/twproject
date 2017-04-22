@@ -304,6 +304,20 @@ span.psw {
 	width:40%;
 	margin:0 auto;
 }
+#nume1{
+	color:white;
+	margin-left:8%;
+	width:40%;
+}
+#nume2{
+	color:white;
+	width:40%;
+	margin-left:4%;
+}
+#nume1, #nume2{
+    display:inline-block;
+	margin-top:10%;
+}
 @media only screen and (max-width: 600px) 
 {
 
@@ -385,6 +399,18 @@ span.psw {
     background-repeat: no-repeat;
     background-position: center center;
 	background-attachment: fixed;
+	}
+	#nume1{
+	color:white;
+	margin-left:8%;
+	margin-top:10%;
+	width:100%;
+	}
+	#nume2{
+	color:white;
+	margin-left:8%;
+	margin-top:5%;
+	width:100%;
 	}
 }
 @media only screen and (min-width:601px) and (max-width:1000px){
