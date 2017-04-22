@@ -24,7 +24,7 @@ $current_date = date('Y-m-d H:i:s');
     <img src="/photos/Login.png" alt="Avatar" class="avatar">
   </div>
 
-  <div class="container" style = "width:40%;margin:0 auto;">
+  <div style = "width:40%;margin:0 auto;">
     <label><b>USERNAME:</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
 	<br>
