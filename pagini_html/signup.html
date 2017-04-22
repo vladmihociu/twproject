@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
-<title>Login Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>	
-
-<h2>Signup Form</h2>
-
-<form action="/action_page.php" style="border:1px solid #ccc">
-  <div class="container">
+<body class="body_login" style = "margin:0 auto;padding:100px;">
+<form action="/action_page.php"method='POST'>
+  <div style = "width:40%;margin:0 auto;">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
@@ -22,9 +19,9 @@
     <input type="checkbox" checked="checked"> Remember me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+    <div>
+      <a href = "../index.php"><button class="button-blue" style = "background-color: #f44336;color:white;" type="button" class="cancelbtn">Cancel</button></a>
+      <button class="button-blue" type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
