@@ -11,9 +11,11 @@ Readme file
 
 @Lupu Andrei
 
-responsive website
+Responsive website
 Contact page content and design
 Home page content and design
+Profile page content and design
+Top players page content 
 Footer design
 Validation of html and css files
 Repository cleaning
