@@ -18,7 +18,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		} 
 		
-		$sql = "SELECT * FROM login WHERE username='$user' AND password='$pass'";
+		$sql = "SELECT * FROM date_user WHERE username='$user' AND password='$pass'";
 		$result = $conn->query($sql);
 		
 		if ($result->num_rows > 0) {
