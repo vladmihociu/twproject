@@ -36,13 +36,13 @@
 <body class="body_website">
 	<img class="header2" src='../photos/banner1.png' alt="Guess the VIP">
 	<ul>
-		<li class = "li-customize"><a href="../pagini_html/home.html">Home</a></li>
-		<li class = "li-customize"><a href="../pagini_html/start.html">Start playing</a></li>
-		<li class = "li-customize"><a href="../pagini_html/top.html">Top players</a></li>
+		<li class = "li-customize"><a href="home.php">Home</a></li>
+		<li class = "li-customize"><a href="start.php">Start playing</a></li>
+		<li class = "li-customize"><a href="top.php">Top players</a></li>
 		<li class = "li-customize"><a class="active" href="profile.php">Profile</a></li>
 		
 		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="logout.php">Log out</a></li>
-		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="../pagini_html/contact.html">Contact</a></li>
+		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="contact.php">Contact</a></li>
 	</ul>
 	<div class="continut">
 	<div style="margin-top:10%;margin-left:10%;width:60%;">
