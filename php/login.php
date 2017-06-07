@@ -48,7 +48,7 @@
 			}
 			
 			//header("Location: ../php/chat.php");
-			header("Location: ../pagini_html/home.html");
+			header("Location:home.php");
 
 
 		}
