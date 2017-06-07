@@ -3,7 +3,7 @@
 if(isset($_COOKIE['username'])) {
 
 	//header("Location: /php/chat.php");
-	header("Location: /pagini_html/home.html");
+	header("Location: /php/home.php");
 }
 $current_date = date('Y-m-d H:i:s');
 
