@@ -4,6 +4,7 @@
 	<title>Start playnig</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 	<style>
 	/* Scrooling loged users bar  */
@@ -28,18 +29,18 @@
 	<br><br><br>
 
 	<img class="coin" src="/photos/coin.png" alt="">
-	
-	<img class="picture" style = "display: block; margin: 0 auto;" src="https://c1.staticflickr.com/3/2849/13872057843_d110751dc7_z.jpg" width="440" height="257" alt="">
+	<p class="coins" name="banuti" id="banuti"> 12 </p>
+	<img id="imagine" class="picture" style = "display: block; margin: 0 auto;" src="https://c1.staticflickr.com/3/2849/13872057843_d110751dc7_z.jpg" width="400" height="227" alt="">
 	
 	<br><br>
 	
 	<div class="user-input" >
-	<input type="raspuns2" placeholder="Your answer" style="width:30%;" required/>
-	<button class="button-submit-answer" type="button">Submit answer</button>
+	<input name="raspunss" id="raspunss" type="raspuns2" placeholder="Your answer" style="width:30%;" required/>
+	<button class="button-submit-answer" type="button" onclick="validate()">Submit answer</button>
 	</div>
 	
 	</div>
-	
+		
 	
 	<!-- @Andrei - Aici trebuie sa il faci responsive -->
 	<div class="rightside">
@@ -103,6 +104,36 @@
 		</a>
 	</div>
 	
+	
+	
+	
+
+<script>
+
+	function validate(){
+		
+			var raspuns = document.getElementById('raspunss').value;
+			var url = document.getElementById("imagine").src;
+			$.ajax({
+				type : "GET",
+				url  : 'validate.php',
+				data: { 
+				urll: url, 
+				raspunsul: raspuns, 
+			  },
+				success: function(data) {
+					var splitResult=data.split("|^|");  
+					//$("#imagine").attr("src",data);
+					//console.log(data);
+					//$("#imagine").html(data);
+					$("#banuti").html(splitResult[0]);
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrow) {
+					alert("Timeout connecting server...");
+				}
+			})
+		}
+</script>
 	
 </body>
 </html>
