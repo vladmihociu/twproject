@@ -1,6 +1,6 @@
 <?php session_start();
 
-	$oldpass=$_POST["oldpas"];
+	$oldpass=md5($_POST["oldpas"]);
 	$newpass=$_POST["newpas"];
 	$newpass2=$_POST["newpas2"];
 
@@ -19,9 +19,9 @@
 	
 		$sql = mysqli_query($conn, "SELECT password FROM date_user WHERE username='".$_SESSION["username"]."' ");
 		$result = $sql->fetch_assoc();
-		if(strcmp($result['password'],$oldpass)==0 && strcmp($newpass,$newpass2)==0 && strlen($newpass)<=20 && strlen($newpass)>=4)
+		if(strcmp(($result['password']),($oldpass))==0 && strcmp($newpass,$newpass2)==0 && strlen($newpass)<=20 && strlen($newpass)>=4)
 		{
-			$sql = "UPDATE date_user SET password='$newpass' WHERE username='".$_SESSION["username"]."' ";
+			$sql = "UPDATE date_user SET password=md5('$newpass') WHERE username='".$_SESSION["username"]."' ";
 			if ($conn->query($sql) === TRUE) 
 			{
 				echo "<script>alert('Parola schimbata cu succes ');window.location.href='profile.php';</script>";

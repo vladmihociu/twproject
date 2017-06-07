@@ -40,7 +40,7 @@
 		}
 		else	
 		{
-			mysqli_query($conn, " INSERT INTO date_user( username, password, nume, prenume, sex, email, adresa, tara ) VALUES('$user', '$pass','-','-','-','$email','-','-')");
+			mysqli_query($conn, " INSERT INTO date_user( username, password, nume, prenume, sex, email, adresa, tara ) VALUES('$user',md5('$pass'),'-','-','-','$email','-','-')");
 			echo "<script>alert('Cont creat cu succes');window.location.href='../index.php';</script>";
 		}
 ?>
