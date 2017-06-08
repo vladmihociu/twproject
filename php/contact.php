@@ -81,6 +81,10 @@
     <p>Subiect</p>
     <textarea name="subiect" placeholder="Detalii despre problema semnalata" style="width:100%;"></textarea>
 	<br><br>
+	<p class="name"  style=" display: none;">
+      <label>If you're human leave this blank:</label>
+      <input name="name" type="text" />
+    </p>
     <input type="submit" value="Submit">
 	</form>
 	</div>

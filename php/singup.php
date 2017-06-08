@@ -16,14 +16,20 @@
 		$user = $_POST["user"];
 		$pass = $_POST["psw"];
 		$pass2= $_POST["psw-repeat"];
+		$robotest = $_POST['name'];
 		
 		$query = mysqli_query($conn, "SELECT email FROM date_user WHERE email='$email'");
 		$query2 = mysqli_query($conn, "SELECT username FROM date_user WHERE username='$user'");
-		
+		if($robotest)
+		{
+			echo "<script>alert('You are a robot.');window.location.href='../pagini_html/signup.html';</script>";
+		}
+		else
 		if (mysqli_num_rows($query))
 		{
 			echo "<script>alert('Emailul este deja folosit ');window.location.href='../pagini_html/signup.html';</script>";
 		}
+		else
 		if (mysqli_num_rows($query2))
 		{
 			echo "<script>alert('Usernameul este deja folosit ');window.location.href='../pagini_html/signup.html';</script>";
