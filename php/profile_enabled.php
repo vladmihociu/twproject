@@ -46,34 +46,36 @@
 	<div class="continut">
 	<div style="margin-top:10%;margin-left:10%;width:60%;">
 	<p style="font-size:20px;">Formular resetare parola:</p><br>
+	<form action="resetare_pass.php" method="POST">
 	<p>Parola veche:</p>
-	<input type="password" name="oldpas" style="color:white;">
+	<input type="password" name="oldpas" placeholder="Introduceti vechea parola" style="color:white;">
 	<p>Parola noua:</p>
-	<input type="password" name="newpas" style="color:white;">
+	<input type="password" name="newpas" placeholder="Introduceti noua parola" style="color:white;">
 	<p>Repetare parola noua:</p>
-	<input type="password" name="newpas2" style="color:white;">
+	<input type="password" name="newpas2" placeholder="Reintroduceti noua parola" style="color:white;">
 	<br><br>
 	<input type="submit" value="Resetare parola">
+	</form>
 	</div>
 	<div style="margin-top:10%;width:60%;margin-bottom:10%;margin-left:10%;">
 	<form action="modifica_date.php" method="POST" >
 	<p style="font-size:20px;">Date personale:</p><br>
 	<p>Nume:</p>
-	<input type="text" name="nume" value="<?PHP echo     $nume?>" style="color:white;">
+	<input type="text" name="nume" value="<?PHP echo     $nume?>" style="color:white;background:grey;">
 	<p>Prenume:</p>
-	<input type="text" name="prenume"  value="<?PHP echo     $prenume?>" style="color:white;" >
+	<input type="text" name="prenume"  value="<?PHP echo     $prenume?>" style="color:white;background:grey;" >
 	<p>Sex:</p>
-	<select name="sex" >
+	<select name="sex" style="background:grey;">
       <option <?php if ($sex =='masculin' ) echo 'selected' ; ?> value="masculin">Masculin</option>
       <option <?php if ($sex =='feminin' ) echo 'selected' ; ?> value="feminin">Feminin</option>
     </select>
 	<br><br>
 	<p>Email:</p>
-	<input type="email" name="email"  value="<?PHP echo     $email?>" style="color:white;" >
+	<input type="email" name="email"  value="<?PHP echo     $email?>" style="color:white;background:grey;" >
 	<p>Adresa:</p>
-	<input type="text" name="adresa"  value="<?PHP echo     $adresa?>" style="color:white;" >
+	<input type="text" name="adresa"  value="<?PHP echo     $adresa?>" style="color:white;background:grey;" >
 	<p>Tara:</p>
-	<select name="tara" value="<?PHP echo     $tara?>" style="width:100%;" >
+	<select name="tara" value="<?PHP echo     $tara?>" style="width:100%;background:grey;" >
 	<option <?php if ($tara =='AFG' ) echo 'selected' ; ?> value="AFG">Afghanistan</option>
 	<option <?php if ($tara =='ALA' ) echo 'selected' ; ?> value="ALA">Åland Islands</option>
 	<option <?php if ($tara =='ALB' ) echo 'selected' ; ?> value="ALB">Albania</option>

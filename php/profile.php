@@ -55,11 +55,11 @@
 	<p style="font-size:20px;">Formular resetare parola:</p><br>
 	<form action="resetare_pass.php" method="POST">
 	<p>Parola veche:</p>
-	<input type="password" name="oldpas" style="color:white;">
+	<input type="password" name="oldpas" placeholder="Introduceti vechea parola" style="color:white;">
 	<p>Parola noua:</p>
-	<input type="password" name="newpas" style="color:white;">
+	<input type="password" name="newpas" placeholder="Introduceti noua parola" style="color:white;">
 	<p>Repetare parola noua:</p>
-	<input type="password" name="newpas2" style="color:white;">
+	<input type="password" name="newpas2" placeholder="Reintroduceti noua parola" style="color:white;">
 	<br><br>
 	<input type="submit" value="Resetare parola">
 	</form>
