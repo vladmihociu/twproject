@@ -122,11 +122,23 @@
 				raspunsul: raspuns, 
 			  },
 				success: function(data) {
-					var splitResult=data.split("|^|");  
-					//$("#imagine").attr("src",data);
-					//console.log(data);
-					//$("#imagine").html(data);
-					$("#banuti").html(splitResult[0]);
+					var splitResult=data.split("|^|");
+					if( splitResult.length > 0 )
+					{
+						//$("#imagine").attr("src",data);
+						//console.log(data);
+						//$("#imagine").html(data);
+						alert("Felicitari, ati raspuns corect!");
+						document.getElementById('raspunss').value = '';
+						$("#banuti").html(splitResult[0]);
+						$("#imagine").attr("src",splitResult[1]);
+					}
+					else
+					{
+						alert("Din pacate, raspunsul a fost gresit!");
+						document.getElementById('raspunss').value = '';
+						$("#imagine").attr("src",data);
+					}
 				},
 				error: function (XMLHttpRequest, textStatus, errorThrow) {
 					alert("Timeout connecting server...");
