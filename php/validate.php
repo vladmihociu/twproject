@@ -41,7 +41,7 @@
 		
 		/* Extracting the next image url */
 		
-		$stmt = $conn->prepare('SELECT url FROM images where url <> ? ORDER BY RAND() LIMIT 1);
+		$stmt = $conn->prepare('SELECT url FROM images where url <> ? ORDER BY RAND() LIMIT 1');
 		$stmt->bind_param('s', $url);
 		$stmt->execute();
 		$result = $stmt->get_result();
