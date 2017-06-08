@@ -120,6 +120,16 @@ min-width: 60px;
 
 }
 
+.coins{
+position: absolute; 
+top: 30px; 
+right: 15px; 
+font-size:calc(12px + 0.5vw);
+color: gold;
+
+
+}
+
 
 
 input[type=raspuns2]{
