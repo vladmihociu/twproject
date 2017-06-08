@@ -29,8 +29,33 @@
 	<br><br><br>
 
 	<img class="coin" src="/photos/coin.png" alt="">
-	<p class="coins" name="banuti" id="banuti"> 12 </p>
-	<img id="imagine" class="picture" style = "display: block; margin: 0 auto;" src="https://c1.staticflickr.com/3/2849/13872057843_d110751dc7_z.jpg" width="400" height="227" alt="">
+	<p class="coins" name="banuti" id="banuti"> 
+	
+			<?php session_start(); include 'databaseconnection.php';
+			
+			$user = $_SESSION["username"];
+			/* Extracting the coin number */
+
+					$stmt = $conn->prepare('SELECT coins from statistics where username = ?');
+					$stmt->bind_param('s', $user);
+					$stmt->execute();
+					$result = $stmt->get_result();
+					$row = $result->fetch_row();
+					echo $row[0];
+			?>
+
+	</p>
+	<img id="imagine" class="picture" style = "display: block; margin: 0 auto;" src="
+																					<?php include 'databaseconnection.php';
+																					/* Extracting the next image url */
+		
+																					$sql = "SELECT url FROM images ORDER BY RAND() LIMIT 1";
+																					$result = $conn->query($sql);
+																					$row = $result->fetch_assoc();
+																					echo $row["url"];
+																					?>
+																					"
+																					width="400" height="227" alt="">
 	
 	<br><br>
 	
@@ -123,7 +148,7 @@
 			  },
 				success: function(data) {
 					var splitResult=data.split("|^|");
-					if( splitResult.length > 0 )
+					if( splitResult.length > 1 )
 					{
 						//$("#imagine").attr("src",data);
 						//console.log(data);
