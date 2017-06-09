@@ -34,6 +34,13 @@
 			<?php session_start(); include 'databaseconnection.php';
 			
 			$user = $_SESSION["username"];
+			/* Reset the wrong answers */
+			
+			$stmt = $conn->prepare("update statistics  set wrong_answer = 0, strike = 0, correct_answers_per_game = 0 where username = ?");
+			$stmt->bind_param('s', $user);
+			$stmt->execute();
+			/*******************************/
+			
 			/* Extracting the coin number */
 
 					$stmt = $conn->prepare('SELECT coins from statistics where username = ?');
@@ -70,41 +77,13 @@
 	<!-- @Andrei - Aici trebuie sa il faci responsive -->
 	<div class="rightside">
 	<h3 class='paddingg' style = "color : gold;">Online Players:</h3>
-		<nav>	
-				<?php
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$dbname = "proiect";
-
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-
-					// Check connection
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					} 
-					
-					$sql = "select username from loggedusers";
-					$result = $conn->query($sql);
-
-					if($result === FALSE) { 
-					echo "Query invalid";
-					/* die(mysql_error()); // TODO: better error handling */
-				}					 
-					echo "<ul>";
-
-					while($row = mysqli_fetch_array($result)){
-						echo "<b>".$row['username']."</b>"."<br>";
-					}
-					echo "</ul>";
-					
-					?>
-		</<nav>
-	<div class="profileinfo"><h3 class='paddingg' style = "color : gold;">Profile info: </h3>
-	<p class='paddingg' > Total games played: </p>
-	<p class='paddingg' > Total used coins: </p>
-	<p class='paddingg' > Total unused coins: </p>
+		<nav id="online" name="online">	
+		
+		</nav>
+	<div class="profileinfo">
+	<h3 class='paddingg' style = "color : gold;">Profile info: </h3>
+	<p class='paddingg' name="correctanswer" id="correctanswer"> Total correct answers: </p>
+	<p class='paddingg' name="banuti-righside" id="banuti-righside"  > Total coins: </p>
 	<p class='paddingg' > Personal record: </p>
 	<p class='paddingg' > Global rank: </p>
 	<p> </p>
@@ -136,40 +115,55 @@
 <script>
 
 	function validate(){
-		
 			var raspuns = document.getElementById('raspunss').value;
 			var url = document.getElementById("imagine").src;
-			$.ajax({
-				type : "GET",
-				url  : 'validate.php',
-				data: { 
-				urll: url, 
-				raspunsul: raspuns, 
-			  },
-				success: function(data) {
-					var splitResult=data.split("|^|");
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'validate.php?raspuns='+raspuns+'&url='+url);
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					var splitResult=xhr.responseText.split("|^|");
+					
 					if( splitResult.length > 1 )
 					{
-						//$("#imagine").attr("src",data);
-						//console.log(data);
-						//$("#imagine").html(data);
 						alert("Felicitari, ati raspuns corect!");
 						document.getElementById('raspunss').value = '';
-						$("#banuti").html(splitResult[0]);
-						$("#imagine").attr("src",splitResult[1]);
+						document.getElementById('banuti').innerHTML = splitResult[0];
+						document.getElementById("banuti-righside").innerHTML = " Total coins: " +splitResult[0];
+						document.getElementById("imagine").src=splitResult[1];
+						document.getElementById("correctanswer").innerHTML = " Total correct answers: " + splitResult[2];
+					
+
 					}
 					else
 					{
+						var raspuns_server = xhr.responseText;
+						if(!raspuns_server.startsWith("http"))
+						{
+							alert("Jocul s-a terminat!/n Ai acumulat"+xhr.responseText+"puncte.");
+							window.location = "home.php";
+							
+						}
+						else
+						{
 						alert("Din pacate, raspunsul a fost gresit!");
 						document.getElementById('raspunss').value = '';
-						$("#imagine").attr("src",data);
+						document.getElementById("imagine").src=xhr.responseText;
+						}
+						
+
 					}
-				},
-				error: function (XMLHttpRequest, textStatus, errorThrow) {
-					alert("Timeout connecting server...");
 				}
-			})
-		}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		
+	}
+	function loadNowPlaying(){
+										  $("#online").load("loggedusers.php");
+										}
+					setInterval(function(){loadNowPlaying()}, 100);
 </script>
 	
 </body>
