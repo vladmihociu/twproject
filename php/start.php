@@ -4,11 +4,10 @@
 	<title>Start playnig</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 	<style>
 	/* Scrooling loged users bar  */
-	nav ul{height:100px; width:48%;}
+	nav ul{height:100px; width:90%;}
 	nav ul{overflow:hidden; overflow-y:scroll;}
 	</style>
 </head>
@@ -160,10 +159,21 @@
 			xhr.send();
 		
 	}
-	function loadNowPlaying(){
-										  $("#online").load("loggedusers.php");
-										}
-					setInterval(function(){loadNowPlaying()}, 100);
+	function loadOnlinePlayers(){
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'loggedusers.php');
+			xhr.onload = function() {
+				if (xhr.status === 200) 
+				{
+					document.getElementById('online').innerHTML = xhr.responseText;
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+	}
+					setInterval(function(){loadOnlinePlayers()}, 100);
 </script>
 	
 </body>
