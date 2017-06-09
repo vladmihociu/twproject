@@ -1,6 +1,6 @@
 <?php
  
-    $email_to = "andrei.lupu1996@yahoo.com";
+    $email_to = "andrei.lupu96@yahoo.com";
 	$email_subject= "Email de la G.T.V ";
      
     $user=$_POST["user"];
@@ -23,6 +23,11 @@
 $headers = 'From: '.$email."\r\n".
 'Reply-To: '.$email."\r\n" .
 'X-Mailer: PHP/' . phpversion();
+	if(preg_match('/[^\w,. ]/',$text))
+		{
+			echo "<script>alert('Mesajl poate contine doar caractere alfanumerice si \'_\' , \'.\' , \',\' , \';\'.');window.location.href='contact.php';</script>";
+		}
+else
 if($robotest)
 		{
 			echo "<script>alert('You are a robot.');window.location.href='contact.php';</script>";

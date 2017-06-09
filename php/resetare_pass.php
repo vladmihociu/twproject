@@ -16,7 +16,13 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		} 
-	
+		
+		if(preg_match('/[^\w ]/',$newpass))
+		{
+			echo "<script>alert('Parola poate contine doar caractere alfanumerice si \'_\' .');window.location.href='profile.php';</script>";
+		}
+		else
+		{
 		$sql = mysqli_query($conn, "SELECT password FROM date_user WHERE username='".$_SESSION["username"]."' ");
 		$result = $sql->fetch_assoc();
 		if(strcmp(($result['password']),($oldpass))==0 && strcmp($newpass,$newpass2)==0 && strlen($newpass)<=20 && strlen($newpass)>=4)
@@ -45,5 +51,6 @@
 		if(strlen($newpass)>20 || strlen($newpass)<4)
 		{
 			echo "<script>alert('Parola trebuie sa contina maxim 20 de carcatere si minim 4 caractere ');window.location.href='profile.php';</script>";
+		}
 		}
 ?>
