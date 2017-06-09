@@ -8,7 +8,7 @@
 	
 	<style>
 	/* Scrooling loged users bar  */
-	nav ul{height:100px; width:48%;}
+	nav ul{height:100px; width:90%;}
 	nav ul{overflow:hidden; overflow-y:scroll;}
 	</style>
 
@@ -50,37 +50,9 @@
 	<!-- @Andrei - Aici trebuie sa il faci responsive -->
 	<div class="rightside">
 	<h3 class='paddingg' style = "color : gold;">Online Players:</h3>
-		<nav>	
-				<?php
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$dbname = "proiect";
+		<nav id="online" name="online">	
 
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-
-					// Check connection
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					} 
-					
-					$sql = "select username from loggedusers";
-					$result = $conn->query($sql);
-
-					if($result === FALSE) { 
-					echo "Query invalid";
-					/* die(mysql_error()); // TODO: better error handling */
-				}					 
-					echo "<ul>";
-
-					while($row = mysqli_fetch_array($result)){
-						echo "<b>".$row['username']."</b>"."<br>";
-					}
-					echo "</ul>";
-					
-					?>
-		</<nav>
+		</nav>
 	<div class="profileinfo"><h3 class='paddingg' style = "color : gold;">Profile info: </h3>
 	<p class='paddingg' > Total games played: </p>
 	<p class='paddingg' > Total used coins: </p>
@@ -111,6 +83,22 @@
 	
 	
 	
-
+<script>
+	function loadOnlinePlayers(){
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'loggedusers.php');
+			xhr.onload = function() {
+				if (xhr.status === 200) 
+				{
+					document.getElementById('online').innerHTML = xhr.responseText;
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+	}
+					setInterval(function(){loadOnlinePlayers()}, 100);
+</script>
 </body>
 </html>
