@@ -23,11 +23,40 @@
 		<li class = "li-customize" style="float:right ;border-left: 1px solid #bbb"><a href="contact.php">Contact</a></li>
 	</ul>
 	<div class="continut">
-	<div style="width:40%;margin-top:10%;margin-left:30%;text-align:center;color:white;">
-	<p style="font-size:30px;">Clasament</p><br>
-	<p>1.Admin:22 puncte</p>
-	<p>2.Vlad:20 puncte</p>
-	<p>3.Andrei:17 puncte</p>
+	<div class="clasament">
+	<table border="1" style="margin-left:5%;width:90%;margin-bottom:5%;text-align:left;margin-top:5%;" >
+	<tr><th><p style="font-size:60px;text-align:center;">Clasament</p><br></th></tr>
+	<div style="text-align:left;margin-left:3%">
+	<?php
+					$servername = "localhost";
+					$username = "root";
+					$password = "";
+					$dbname = "proiect";
+
+					// Create connection
+					$conn = new mysqli($servername, $username, $password, $dbname);
+
+					// Check connection
+					if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					} 
+					
+					$sql = "SELECT username,correct_answers FROM statistics order by correct_answers desc LIMIT  10";
+					$result = $conn->query($sql);
+
+					if($result === FALSE) { 
+					echo "Query invalid";
+					/* die(mysql_error()); // TODO: better error handling */
+				}					 
+					$i=1;
+					while($row = mysqli_fetch_array($result)){
+						echo "<tr><td>".$i.". ".$row['username']."   ".$row['correct_answers']." raspunsuri corecte."."</td></tr>";
+						$i=$i+1;
+					}
+					
+	?>
+	</div>
+	</table>
 	</div>
 	</div>
 	
