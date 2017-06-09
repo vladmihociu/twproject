@@ -43,8 +43,8 @@
 			$cookie_username_value = $user;
 			$cookie_pass = "password";
 			$cookie_pass_value = $pass;
-			setcookie($cookie_username, $cookie_username_value, time() + (86400), "/"); // 86400 = 1 day
-			setcookie($cookie_pass, $cookie_pass_value, time() + (86400), "/"); // 86400 = 1 day
+			setcookie($cookie_username, $cookie_username_value, time() + (43200), "/"); // 86400 = 1 day
+			setcookie($cookie_pass, $cookie_pass_value, time() + (43200), "/"); // 86400 = 1 day
 			}
 			
 			//header("Location: ../php/chat.php");
