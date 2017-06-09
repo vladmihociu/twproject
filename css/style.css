@@ -129,7 +129,19 @@ color: gold;
 
 
 }
-
+.clasament{
+	width:90%;
+	margin-top:5%;
+	margin-left:5%;
+	margin-bottom:5%;
+	text-align:center;
+	color:white;
+	border-style: inset;
+	border-radius: 50px;
+	border-width: 3px;
+	font-size: 22px;
+	background-color:#565252;
+}
 
 
 input[type=raspuns2]{
