@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Top players</title>
+	<title>Profile</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<meta charset="UTF-8">
 	
