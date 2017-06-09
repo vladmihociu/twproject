@@ -27,8 +27,8 @@ function logout()
 	if(logout())
 	{
 		setcookie('username', $_SESSION["username"], time() + (-86400), "/"); // 86400 = 1 day
-		setcookie('password', $_SESSION["password"], time() + (-86400), "/"); // 86400 = 1 day			
-
+		setcookie('password', $_SESSION["password"], time() + (-86400), "/"); // 86400 = 1 day	
+		session_destroy();		
 		header("Location: ../index.php");
 		
 	}

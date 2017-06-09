@@ -1,4 +1,8 @@
 <?php session_start();
+		if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "OK")) {
+			echo "<script>alert('Nu sunteti logat ');window.location.href='../index.php';</script>";
+			exit;
+		}
    	    $servername = "localhost";
 		$username = "root";
 		$password = "";

@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "OK")) {
+			echo "<script>alert('Nu sunteti logat ');window.location.href='../index.php';</script>";
+			exit;
+		}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +38,7 @@
 	<img class="coin" src="/photos/coin.png" alt="">
 	<p class="coins" name="banuti" id="banuti"> 
 	
-			<?php session_start(); include 'databaseconnection.php';
+			<?php include 'databaseconnection.php';
 			
 			$user = $_SESSION["username"];
 			/* Reset the wrong answers */

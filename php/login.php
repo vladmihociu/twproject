@@ -35,6 +35,7 @@
 	
 	
 	$_SESSION["username"] = $user;
+	 $_SESSION["loggedin"] = "OK";
 	if(login($user,$pass))
 		{
 			if(isset($_POST["remember"]))
