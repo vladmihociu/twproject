@@ -76,6 +76,10 @@
 	<div class="user-input" >
 	<input name="raspunss" id="raspunss" type="raspuns2" placeholder="Your answer" style="width:30%;" required/>
 	<button class="button-submit-answer" type="button" onclick="validate()">Submit answer</button>
+	<br><br>
+	<button class="button-submit-answer" type="button" onclick="autocorrect()"> Correct answer - 5 coins </button>    
+	<button class="button-submit-answer" type="button" onclick="skipimage()"> Skip picture - 3 coins </button> 
+
 	</div>
 	
 	</div>
@@ -89,11 +93,80 @@
 		</nav>
 	<div class="profileinfo">
 	<h3 class='paddingg' style = "color : gold;">Profile info: </h3>
-	<p class='paddingg' name="correctanswer" id="correctanswer"> Total correct answers: </p>
-	<p class='paddingg' name="banuti-righside" id="banuti-righside"  > Total coins: </p>
-	<p class='paddingg' > Personal record: </p>
-	<p class='paddingg' > Global rank: </p>
-	<p> </p>
+	<p class='paddingg' name="correctanswer" id="correctanswer"> Total correct answers: 
+						<?php include 'databaseconnection.php';
+						
+						/* Extracting the next image url */
+						
+						$user = $_SESSION["username"];
+						$stmt = $conn->prepare('SELECT correct_answers FROM statistics where username = ?');
+						$stmt->bind_param('s', $user);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$row = $result->fetch_row();
+
+						echo $row[0];
+						?>
+	</p>
+	<p class='paddingg' name="banuti-righside" id="banuti-righside"  > Total coins: 
+						<?php include 'databaseconnection.php';
+						
+						/* Extracting the next image url */
+						
+						$user = $_SESSION["username"];
+						$stmt = $conn->prepare('SELECT coins FROM statistics where username = ?');
+						$stmt->bind_param('s', $user);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$row = $result->fetch_row();
+
+						echo $row[0];
+						?></p>
+	<p class='paddingg' name="strike" id="strike"> Current game strikes: 
+						<?php include 'databaseconnection.php';
+						
+						/* Extracting the next image url */
+						
+						$user = $_SESSION["username"];
+						$stmt = $conn->prepare('SELECT strike FROM statistics where username = ?');
+						$stmt->bind_param('s', $user);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$row = $result->fetch_row();
+
+						echo $row[0];
+						?>
+	</p>
+	<p class='paddingg' name="correctpergame" id="correctpergame"> Current game correct answers: 
+					<?php include 'databaseconnection.php';
+						
+						/* Extracting the next image url */
+						
+						$user = $_SESSION["username"];
+						$stmt = $conn->prepare('SELECT correct_answers_per_game FROM statistics where username = ?');
+						$stmt->bind_param('s', $user);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$row = $result->fetch_row();
+
+						echo $row[0];
+						?>
+	</p>
+	<p class='paddingg' name="wronganswer" id="wronganswer"> Chances left: 
+						<?php include 'databaseconnection.php';
+						
+						/* Extracting the next image url */
+						
+						$user = $_SESSION["username"];
+						$stmt = $conn->prepare('SELECT wrong_answer FROM statistics where username = ?');
+						$stmt->bind_param('s', $user);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$row = $result->fetch_row();
+						$sanse = intval($row[0]) + 3;
+						echo $sanse;
+						?>
+	</p>
 	</div>
 	</div>
 	
@@ -138,6 +211,10 @@
 						document.getElementById("banuti-righside").innerHTML = " Total coins: " +splitResult[0];
 						document.getElementById("imagine").src=splitResult[1];
 						document.getElementById("correctanswer").innerHTML = " Total correct answers: " + splitResult[2];
+						document.getElementById("correctpergame").innerHTML = " Current game correct answers:  " + splitResult[3];
+						document.getElementById("strike").innerHTML = " Current game strikes: " + splitResult[4];
+
+
 					
 
 					}
@@ -146,15 +223,21 @@
 						var raspuns_server = xhr.responseText;
 						if(!raspuns_server.startsWith("http"))
 						{
-							alert("Jocul s-a terminat!/n Ai acumulat"+xhr.responseText+"puncte.");
+							alert("Ati raspuns gresit!\n\nJocul s-a terminat!\n\n In acest meci ai acumulat "+xhr.responseText+" puncte.");
 							window.location = "home.php";
 							
 						}
 						else
 						{
-						alert("Din pacate, raspunsul a fost gresit!");
-						document.getElementById('raspunss').value = '';
-						document.getElementById("imagine").src=xhr.responseText;
+							var parse = xhr.responseText.split("|||");
+							var sanse = parseInt(parse[1]) + 3;
+							alert("Din pacate, raspunsul a fost gresit!\n\nMai ai "+sanse+" vieti.");
+							document.getElementById('raspunss').value = '';
+							document.getElementById("imagine").src=parse[0];
+							document.getElementById("wronganswer").innerHTML = " Chances left: " + sanse;
+							document.getElementById("strike").innerHTML = " Current game strikes: " + parse[2];
+
+
 						}
 						
 
@@ -167,6 +250,64 @@
 			xhr.send();
 		
 	}
+	
+	function autocorrect(){
+		
+			var url = document.getElementById("imagine").src;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'autocorrect.php?url='+url);
+			xhr.onload = function() {
+
+				if (xhr.status === 200) 
+				{
+					var raspuns = xhr.responseText;
+					if( raspuns.startsWith("Insuf"))
+					{
+							alert(raspuns);
+					}
+					else
+					{
+						document.getElementById('raspunss').value  = raspuns;
+					}
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+	}
+	
+	function skipimage(){
+		
+			var url = document.getElementById("imagine").src;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'skipimage.php?url='+url);
+			xhr.onload = function() {
+
+				if (xhr.status === 200) 
+				{
+					var raspuns = xhr.responseText;
+					if(raspuns.startsWith("http"))
+					{
+						var parse = xhr.responseText.split("|.|");
+						
+						document.getElementById("imagine").src=parse[0];
+						document.getElementById('banuti').innerHTML = parse[1];
+						document.getElementById("banuti-righside").innerHTML = " Total coins: " +parse[1];
+					}
+					else
+					{
+						alert(raspuns);
+
+					}
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+	}
+	
 	function loadOnlinePlayers(){
 			var xhr = new XMLHttpRequest();
 			xhr.open('GET', 'loggedusers.php');
