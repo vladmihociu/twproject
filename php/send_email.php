@@ -1,7 +1,7 @@
 <?php
  
-    $email_to = "andrei.lupu96@yahoo.com";
-	$email_subject= "Email de la G.T.V ";
+    $email_to = "vlad.maciu@gmail.com";
+	$email_subject= "[Contact GUESSTV]Email de la G.T.V ";
      
     $user=$_POST["user"];
 	$email=$_POST["email"];
