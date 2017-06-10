@@ -70,10 +70,10 @@
 	<form action="send_email.php" method="POST">
 	<p style="font-size:20px;">Formular de contact</p><br>
     <p>User</p>
-    <input type="text" name="user" value="<?PHP echo     $user?>" style="color:white;">
+    <input type="text" name="user" value="<?PHP echo     $user?>" disabled style="color:white;">
 
     <p>Email<p>
-    <input type="text" name="email" value="<?PHP echo     $email?>" style="color:white;" >
+    <input type="text" name="email" value="<?PHP echo     $email?> " disabled style="color:white;" >
 
     <p>Problema semnalata<p>
     <select name="problema">
