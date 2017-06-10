@@ -98,7 +98,6 @@
 	<div class="rightside">
 	<h3 class='paddingg' style = "color : gold;">Online Players:</h3>
 		<nav id="online" name="online">	
-		<nav id="online" name="online">	
 
 		</nav>
 	<div class="profileinfo"><h3 class='paddingg' style = "color : gold;">Profile info: </h3>
